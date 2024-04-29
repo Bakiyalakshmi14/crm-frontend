@@ -1,0 +1,49 @@
+[
+    {
+        "id": 1,
+        "subject": "Subject 1",
+        "status": "Pending",
+        "issueDate": "2024-04-20",
+        "history": [
+            {
+                "date": "23-04-2024",
+                "message": "message1",
+                "messageBy": "client"
+            },
+            {
+                "date": "23-04-2024",
+                "message": "message2",
+                "messageBy": "operator"
+            },
+            {
+                "date": "23-04-2024",
+                "message": "message3",
+                "messageBy": "client"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "subject": "Subject 2",
+        "status": "Pending",
+        "issueDate": "2024-04-20"
+    },
+    {
+        "id": 3,
+        "subject": "Subject 3",
+        "status": "Pending",
+        "issueDate": "2024-04-20"
+    },
+    {
+        "id": 4,
+        "subject": "Subject 4",
+        "status": "Pending",
+        "issueDate": "2024-04-20"
+    },
+    {
+        "id": 5,
+        "subject": "Subject 5",
+        "status": "Pending",
+        "issueDate": "2024-04-20"
+    }
+]
