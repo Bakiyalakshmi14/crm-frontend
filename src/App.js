@@ -10,13 +10,12 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { PrivateRoute } from './Components/privateRoute/PrivateRoute.Comp';
 
 function App() {
-  const isAuthenticated = true;
   return (
     <div>
       <Router>
         <Routes>
           <Route path="/" exact element={<Entry />} />
-          <Route path="/" element={<PrivateRoute isAuthenticated={isAuthenticated}/>}>
+          <Route path="/" element={<PrivateRoute/>}>
               <Route path="/dashboard" element={<DefaultLayout><Dashboard /></DefaultLayout>} />
               <Route path="/add-ticket" element={<DefaultLayout><AddTicket /></DefaultLayout>} />
               <Route path="/tickets" element={<DefaultLayout><TicketList /></DefaultLayout>} />

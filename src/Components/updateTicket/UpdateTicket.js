@@ -1,7 +1,27 @@
 import React from "react";
-import { Form, Button} from "react-bootstrap"
+import { Form, Button, Alert} from "react-bootstrap"
+import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { replyOnTicket } from "../../pages/TicketList/TicketAction";
 
-export const UpdateTicket = ({msg, handleOnChange, handleOnSubmit}) => {
+export const UpdateTicket = () => {
+    const dispatch = useDispatch();
+    const [ message, setMessage] = useState('');
+    const { user: {name, _id}} = useSelector( state=> state.user)
+    const { selectedTicket} = useSelector( state => state.tickets)
+    const handleOnChange = (e) => {
+        setMessage(e.target.value)
+    }
+
+    const handleOnSubmit = (e) => {
+        e.preventDefault();
+        const msgObj = {
+            message,
+            sender: name
+        }
+        dispatch(replyOnTicket(selectedTicket._id, msgObj));
+        setMessage('');
+    }
     return (
         <div>
             <Form onSubmit={handleOnSubmit}>
@@ -9,7 +29,7 @@ export const UpdateTicket = ({msg, handleOnChange, handleOnSubmit}) => {
                 <br/>
                 <Form.Text>Please reply your message here or update the ticket.</Form.Text>
                 <Form.Control
-                    value={msg}
+                    value={message}
                     onChange={(e)=> handleOnChange(e)}
                     as="textarea"
                     row="5"

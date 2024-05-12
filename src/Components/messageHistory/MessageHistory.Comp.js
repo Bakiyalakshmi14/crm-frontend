@@ -7,8 +7,8 @@ export const MessageHistory = ({ msg})=> {
         msg.map(( row, i)=> 
         <div className="message-history mt-3" key={i}>
             <div className="send  font-weight-bold text-secondary">
-                <div className="sender">{row.messageBy}</div>
-                <div className="date">{row.date}</div>
+                <div className="sender">{row.sender}</div>
+                <div className="date">{new Date(row.msgAt).toLocaleString()}</div>
             </div>
             <div className="message">{row.message}</div>
         </div>)

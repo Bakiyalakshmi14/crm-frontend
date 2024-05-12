@@ -1,7 +1,21 @@
-import React from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import React, { useState} from "react"
 
-export const PasswordReset = ({ handleOnChange, email, handleOnResetSubmit, formSwitch}) => {
+export const PasswordReset = ({ handleOnResetSubmit, formSwitch}) => {
+
+    const [ email, setEmail] = useState('');
+
+    const handleOnChange = e => {
+        const { name, value} = e.target
+        switch( name){
+            case "email":
+                setEmail(value)
+                break;
+            default:
+                break;
+        }
+    }
+
     return(
         <Container>
             <Row>
